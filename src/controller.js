@@ -23,14 +23,14 @@ const upload = async (req, res) => {
                 header++;
             } else {
                 // Les doy el formato del modelo a cada fila del csv
-                const formatted = {
+                const formatted = new Records({
                     id: parseInt(data._0, 10) ? parseInt(data._0, 10) : 0,
                     firstname: data._1,
                     lastname: data._2,
                     email: data._3,
                     email2: data._4,
                     profession: data._5
-                };
+                });
 
                 // Agrego el objeto formateado al arreglo batch
                 batch.push(formatted);
